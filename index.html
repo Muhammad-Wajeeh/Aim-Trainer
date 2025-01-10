@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aim Trainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+IE+Guides&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Start Screen -->
+    <div class="screen">
+      <h1>Aim Trainer</h1>
+      <button class="btn" id="start">Start Game</button>
+    </div>
+
+    <!-- Select Time Screen -->
+    <div class="screen">
+      <h1>Choose Time</h1>
+      <ul class="list" id="time-list">
+        <li>
+          <button class="btn time-btn" data-time="10">10 sec</button>
+        </li>
+        <li>
+          <button class="btn time-btn" data-time="30">30 sec</button>
+        </li>
+        <li>
+          <button class="btn time-btn" data-time="60">1 min</button>
+        </li>
+        <li>
+          <button class="btn time-btn" data-time="120">2 min</button>
+        </li>
+        <li>
+          <!-- 1 = true -->
+          <button class="btn time-btn" data-unlimited="1">Unlimited</button>
+        </li>
+      </ul>
+    </div>
+    <!-- Select Difficulty Screen -->
+    <div class="screen">
+      <h1>Choose Difficulty</h1>
+      <ul class="list" id="difficulty-list">
+        <li>
+          <button class="btn difficulty-btn" data-difficulty="easy">
+            Easy
+          </button>
+        </li>
+        <li>
+          <button class="btn difficulty-btn" data-difficulty="medium">
+            Medium
+          </button>
+        </li>
+        <li>
+          <button class="btn difficulty-btn" data-difficulty="hard">
+            Hard
+          </button>
+        </li>
+      </ul>
+    </div>
+    <!-- Game Screen -->
+    <div class="screen">
+      <div class="stats">
+        <div class="info">
+          <p>Time: <span id="time">00:00</span></p>
+          <p>Hits: <span id="hits">0</span></p>
+          <p>Accuracy: <span id="accuracy">100%</span></p>
+        </div>
+        <div class="lives">
+          <img src="/images/heart.png" class="heart" />
+          <img src="/images/heart.png" class="heart" />
+          <img src="/images/heart.png" class="heart" />
+        </div>
+      </div>
+      <div class="board" id="board">
+        <!-- <div class="circle"></div> -->
+      </div>
+      <div class="options">
+        <button class="btn restart">Restart</button>
+        <button class="btn" id="fullscreen">Full Screen</button>
+        <button class="btn" id="minimize">Minimize</button>
+      </div>
+    </div>
+    <!-- Game over Screen -->
+    <div class="screen">
+      <h1>Game Over</h1>
+      <div class="results">
+        <p>Hits:<span id="hits-over">0</span></p>
+        <p>Accuracy:<span id="accuracy-over">0%</span></p>
+      </div>
+      <button class="btn restart" id = "restart-over">Restart</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

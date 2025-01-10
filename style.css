@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #29cef7;
+}
+
+body {
+  height: 100vh;
+  color: #faebd7;
+  overflow: hidden; /* used to hide scrollbars*/
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  background-color: #1e1f26;
+}
+
+h1 {
+  line-height: 2;
+  font-size: 4rem;
+}
+
+.btn {
+  color: #faebd7;
+  cursor: pointer;
+  border: solid 2px #faebd7;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+}
+
+.btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.screen {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  transition: margin 0.5s ease-out;
+  background-color: #011623;
+}
+
+.screen.off {
+  display: none;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list li {
+  margin: 10px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.info span {
+  color: var(--primary-color);
+  margin-left: 10px;
+}
+
+.lives {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.heart {
+  width: 30px;
+  height: 30px;
+}
+
+.heart.dead {
+  opacity: 50%;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  background-color: #031e2e;
+  overflow: hidden;
+  cursor: url("./images/crosshair.png") 20 20, crosshair; /*this took a while to find, but you need to make sure your png is optimized to be used as a cursor, or you can just use a .cur file instead. Another thing you should note is that the 20 20 is basically setting the cursor coordinates which is important for setting the actual cursor to the center of the image you are using; in our case we are using 20 20 since our image is 40px by 40px, if it was 100 px by 100px we would use 50 50 */
+}
+
+#minimize {
+  display: none;
+}
+
+.circle{
+  /* will be generated in JS */
+  /* width: 50px;
+  height: 50px; */
+  position: absolute;
+  background-color: var(--primary-color);
+  animation: circle 2s linear forwards;
+  border-radius: 50%;
+}
+
+@keyframes circle{
+  100%{
+    transform: scale(0);
+  }
+}
+
+.results{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.results p{
+  font-size: 1.5rem;
+}
+
+.results p span{
+color: var(--primary-color);
+margin-left: 10px;
+}
+
+/* responsive design */
+
+@media (max-width: 768px){
+  h1{
+    font-size: 2rem;
+  }
+
+  .btn{
+    font-size: 1rem;
+  }
+
+  .stats{
+    gap:20px;
+    flex-direction: column;
+  }
+
+  .stats div{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .lives{
+    margin-bottom: 10px;
+  }
+}
